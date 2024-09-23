@@ -32,7 +32,18 @@ class ValueWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: const Text("Chapter 4: Value Widget - Text Widget")
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("Text Widget"),
+          Icon(
+            Icons.cake,
+            color: Colors.red,
+            size: 200,
+          )
+        ],
+      )
     );  
   }
 }
