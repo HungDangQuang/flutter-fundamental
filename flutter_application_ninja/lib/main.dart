@@ -30,26 +30,105 @@ class ValueWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+
+    TextEditingController _controller = TextEditingController(text: "Initial value here");
+
     return Container(
       alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Text("Text Widget"),
-          const Icon(
-            Icons.cake, 
-            color: Colors.red,
-            size: 200,
-            semanticLabel: "A Cake for birthday",
-          ),
-          Image.asset('assets/images/photo1.png')
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("Text Widget"),
+            const Icon(
+              Icons.cake, 
+              color: Colors.red,
+              size: 200,
+              semanticLabel: "A Cake for birthday",
+            ),
+            Image.asset(
+              'assets/images/photo1.png',
+              fit: BoxFit.fill,
+            ),
+            Image.network("https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"),
+            MyTextField2()
+          ],
+        ),
       )
     );  
   }
 }
 
+class MyTextField extends StatefulWidget {
+  
+  const MyTextField({super.key});
+
+  @override
+  _MyTextFieldState createState() {
+    return _MyTextFieldState(); 
+  }
+}
+
+class _MyTextFieldState extends State<MyTextField> {
+
+
+
+  String _inputText = "";
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        TextField(
+          onChanged: (text) {
+            setState(() {
+              _inputText = text;
+            });
+          },
+          decoration: const InputDecoration(
+            labelText: "Email",
+            hintText: "you@email.com",
+            icon: Icon(Icons.contact_mail)
+          ),
+        ),
+        const SizedBox(height: 20,),
+        Text(
+          'you typed: $_inputText',
+          style: const TextStyle(fontSize: 16),
+        )
+      ],
+    );
+  }
+}
+
+class MyTextField2 extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    TextEditingController _controller = TextEditingController(text: "Initial value here");
+    String _inputText = "";
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        TextField(
+          controller: _controller,
+          onChanged: (String val) => _inputText = val,
+          decoration: const InputDecoration(
+            labelText: "Email",
+            hintText: "you@email.com",
+            icon: Icon(Icons.email)
+          ),
+        ),
+        const SizedBox(height: 20),
+        Text("Typed: $_inputText")
+      ],
+    );
+  }
+}
 // class RootWidget extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
