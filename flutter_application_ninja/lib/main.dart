@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'radio_example.dart';
 import 'slider_example.dart';
+import 'dropdown_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Chapter 4: Value Widgets"),),
-        body: const SliderExample(),
+        body: const DropdownExample(),
       ),
     );
   }
