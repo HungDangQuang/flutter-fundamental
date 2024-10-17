@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text("Chapter 4: Value Widgets"),),
         body: const FormExample(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => print("Floating action button is clicked"),
+          child: const Icon(Icons.check),),
       ),
     );
   }
