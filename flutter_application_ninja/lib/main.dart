@@ -4,6 +4,7 @@ import 'slider_example.dart';
 import 'dropdown_example.dart';
 import 'form_example.dart';
 import 'cupertino_button_example.dart';
+import 'dismissible_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Chapter 4: Value Widgets"),),
-        body: const CupertinoButtonExample(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => print("Floating action button is clicked"),
-          child: const Icon(Icons.check),),
+        body: const DismissibleExample(),
       ),
     );
   }
