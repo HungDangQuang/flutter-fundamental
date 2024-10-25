@@ -5,6 +5,7 @@ import 'dropdown_example.dart';
 import 'form_example.dart';
 import 'cupertino_button_example.dart';
 import 'dismissible_example.dart';
+import 'long_press_gesture_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Chapter 4: Value Widgets"),),
-        body: const DismissibleExample(),
+        body: const ManagePeople(),
       ),
     );
   }
